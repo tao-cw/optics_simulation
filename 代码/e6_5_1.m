@@ -1,0 +1,21 @@
+clear
+RGB=imread('E:\tu6-5-1.png');%读取原图像
+s=size(RGB);
+r=randsample(s(1),s(1));%产生一个与图像RGB的行数相等的随机数列
+l=length(r);
+RGBS=RGB(r,:,:);
+t=1;j=1;f=1:r;
+for t=1:l
+    f(j)=find(r==t);
+    t=t+1;
+    j=j+1;
+end
+f;
+RGBE=RGBS(f,:,:);
+imshow(RGB);
+title('原图','fontsize',26);
+figure;
+subplot(1,2,1);imshow(RGBS);
+title('加密图像','fontsize',20);
+subplot(1,2,2);imshow(RGBE);
+title('解密图像','fontsize',20);

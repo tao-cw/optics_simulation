@@ -1,0 +1,9 @@
+I=imread('E:\4.jpg');
+J=imadjust(I);%全局拉伸
+K=imadjust(I,[0.3,0.7],[]);%分段拉伸
+figure
+imshow(I);
+figure
+imshow(J);
+figure
+imshow(K)

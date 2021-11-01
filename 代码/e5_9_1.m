@@ -1,0 +1,19 @@
+%具体参数都是根据实际要求得到
+clear;clc
+I=imread('ceshi1.png');%读图
+I2=rgb2gray(I);%灰度图
+BW=sum(I2<230);%二值化
+addr=find((diff(BW>200))~=0);%找到每个模块的始末行坐标
+subplot(1,2,1);
+imshow(I2);
+title('原图');
+subplot(1,2,2)
+plot(1:length(BW),BW);
+xlabel('列值');ylabel('像素点累计个数');title('像素点统计图');
+figure;
+for n=1:length(addr)/2%得到的始末坐标除以2，即为模块的个数
+    subplot(1,length(addr)/2,n);
+    temp=zeros(size(I2));%创建一个模板
+    temp(:,addr(2*n-1):addr(2*n))=1;%得到各个模块的模板
+    imshow(uint8(temp).*I2);%将三个模块分开
+end

@@ -1,0 +1,16 @@
+x=-10:0.5:10;
+y=-10:0.5:10;
+[X,Y]= meshgrid(x,y);
+Z=sin(sqrt(X.^2+Y.^2))./sqrt(X.^2+Y.^2);
+subplot(221);
+mesh(X,Y,Z);
+title('普通三维网格曲面');
+subplot(222);
+meshc(X,Y,Z);
+title('带等高线的三维网格曲面');
+subplot(223);
+meshz(X,Y,Z);
+title('带底座的三维网格曲面');
+subplot(224);
+surf(X,Y,Z);
+title('填充颜色的三维网格曲面');

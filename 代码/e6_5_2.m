@@ -1,0 +1,20 @@
+clear
+RGB=imread('E:\2.png');
+s=size(RGB);
+i=randsample(s(2),s(2));
+l=length(i);
+RGBS=RGB(:,i,:);
+t=1;j=1;f=1:i;
+for  t=1:l
+    f(j)=find(i==t);
+    t=t+1;
+    j=j+1;
+end
+f;
+RGBE=RGBS(:,f,:);
+imshow(RGB);title('‘≠Õº','fontsize',26);
+figure;
+subplot(1,2,1);imshow(RGBS); 
+title('º”√‹ÕºœÒ','fontsize',23);
+subplot(1,2,2);imshow(RGBE);
+title('Ω‚√‹ÕºœÒ','fontsize',23);

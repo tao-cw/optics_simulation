@@ -1,0 +1,12 @@
+I=imread('E:\juzi.png');
+J=imread('E:\hua1.jpg');
+K=imread('E:\2.jpg');
+L=imread('E:\3.jpg');
+subplot(2,2,1);
+imshow(I);
+subplot(2,2,2);
+imshow(J);
+subplot(2,2,3);
+imshow(K);
+subplot(2,2,4);
+imshow(L);
